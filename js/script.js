@@ -60,7 +60,6 @@ function displayWeatherCondition(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
-  console.log(response.data);
   document.querySelector("#feels-like").innerHTML = Math.round(
     response.data.main.feels_like
   );
