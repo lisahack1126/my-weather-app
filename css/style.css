@@ -111,9 +111,10 @@ ul {
 
 .current-temp-ul {
   padding: 0px;
+  text-transform: capitalize;
 }
 
 #temperature {
   position: relative;
-  left: -15px;
+  left: -17px;
 }
