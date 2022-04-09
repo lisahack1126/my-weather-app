@@ -1,3 +1,13 @@
+img {
+  display: block;
+  margin: 0 auto;
+  width: 75px;
+}
+
+ul {
+  list-style: none;
+}
+
 .weather-app {
   background-color: #ddedf5;
   border-radius: 5px;
@@ -37,18 +47,9 @@
   font-size: 50px;
 }
 
-ul {
-  list-style: none;
-}
-
 .current-date-time {
   padding-left: 15px;
-}
-
-img {
-  display: block;
-  margin: 0 auto;
-  width: 75px;
+  font-size: 20px;
 }
 
 #current-image {
@@ -58,19 +59,20 @@ img {
 }
 
 .currentTemp {
-  text-align: right;
   font-size: 100px;
+  text-align: right;
 }
 
 .fahrenheit {
   font-size: 20px;
   position: relative;
-  top: -55px;
-  left: -25px;
+  top: -52px;
+  left: -38px;
 }
 
 .current-conditions {
   padding: 15px 0 0 10px;
+  font-size: 20px;
 }
 
 .conditions-value {
@@ -100,7 +102,7 @@ img {
 }
 
 .conditions {
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
   font-style: italic;
   position: relative;
@@ -109,4 +111,9 @@ img {
 
 .current-temp-ul {
   padding: 0px;
+}
+
+#temperature {
+  position: relative;
+  left: -15px;
 }
