@@ -109,9 +109,12 @@ ul {
   bottom: 10px;
 }
 
+.conditions::first-letter {
+  text-transform: capitalize;
+}
+
 .current-temp-ul {
   padding: 0px;
-  text-transform: capitalize;
 }
 
 #temperature {
