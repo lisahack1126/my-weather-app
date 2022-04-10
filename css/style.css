@@ -8,6 +8,11 @@ ul {
   list-style: none;
 }
 
+button {
+  position: relative;
+  top: -1px;
+}
+
 .weather-app {
   background-color: #ddedf5;
   border-radius: 5px;
