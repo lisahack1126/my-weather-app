@@ -69,6 +69,15 @@ function displayWeatherCondition(response) {
   document.querySelector("#low").innerHTML = Math.round(
     response.data.main.temp_min
   );
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+  document
+    .querySelector("#icon")
+    .setAttribute("alt", response.data.weather[0].description);
 }
 
 function search(city) {
