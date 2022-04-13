@@ -42,6 +42,36 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 
+// 5-day forecast
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+        <div class="five-day-date">${day}</div>
+        <img
+          src="http://openweathermap.org/img/wn/50d@2x.png"
+          alt=""
+          width="75"
+        />
+        <div class="five-day-temperatures">
+          <span class="five-day-temperature-max">48°</span>
+          <span class="five-day-temperature-min">30°</span>
+        </div>
+      </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let currentTime = document.querySelector("#time");
 currentTime.innerHTML = `${hours}:${minutes}${ampm}`;
 
@@ -96,3 +126,5 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", citySearch);
 
 search("New York");
+
+displayForecast();
