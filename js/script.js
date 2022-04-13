@@ -43,7 +43,8 @@ if (minutes < 10) {
 }
 
 // 5-day forecast
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Thu", "Fri", "Sat", "Sun"];
@@ -78,6 +79,13 @@ currentTime.innerHTML = `${hours}:${minutes}${ampm}`;
 let currentDate = document.querySelector("#date");
 currentDate.innerHTML = `${day}, ${month} ${date}`;
 
+// One Call API Forecast
+function getForecast(coordinates) {
+  let apiKey = "07d2964c500ffbfcd2b577b291d089bd";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 // Week 5 HW - Search Engine
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
@@ -108,6 +116,8 @@ function displayWeatherCondition(response) {
   document
     .querySelector("#icon")
     .setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -126,5 +136,3 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", citySearch);
 
 search("Lexington");
-
-displayForecast();
