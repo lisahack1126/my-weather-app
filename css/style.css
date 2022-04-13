@@ -7,6 +7,10 @@ button {
   top: -1px;
 }
 
+body {
+  background-color: azure;
+}
+
 .weather-app {
   background-color: #ddedf5;
   border-radius: 5px;
